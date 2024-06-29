@@ -1,0 +1,24 @@
+<div class="sign-in">
+    <div class="title">
+        Sign in
+    </div>
+    <div class="sign-in-form">
+        <div class="label">Email:</div>
+        <input class="input" type="text" placeholder="Email" [(ngModel)]="credentials.username">
+        <div class="label">Password:</div>
+        <div class="password-input">
+            <input class="input-password" [type]="isPasswordHidden ? 'password' : 'text'" placeholder="Password" [(ngModel)]="credentials.password">
+            <img class="eye" [src]="'../../../../assets/eye' + (isPasswordHidden ? '' : '-slash') + '.svg'" (click)="toggleHidePassword()"/>
+            <div class="forgot-password">
+                <div class="forgot-password-text">Forgot password? <span class="link" (click)="navigate('/request-passwordless-sign-in')">Sign in without password</span> or <span class="link" (click)="navigate('/request-reset-password')">reset password</span>.</div>
+            </div>
+        </div>
+        <re-captcha class="re-captcha" (resolved)="resolveReCaptcha($event)" [siteKey]="reCaptchaSiteKey"></re-captcha>
+        <div class="sign-in-button" (click)="tryLogin()">
+            <div class="sign-in-button-text">Sign in</div>
+        </div>
+        <div class="question">Don't have an account? <span class="link" (click)="navigate('/sign-up')">Sign up</span></div>
+        <div class="or">or</div>
+        <div class="google"><asl-google-signin-button type="standard" size="large" shape="pill"></asl-google-signin-button></div>
+    </div>
+</div>

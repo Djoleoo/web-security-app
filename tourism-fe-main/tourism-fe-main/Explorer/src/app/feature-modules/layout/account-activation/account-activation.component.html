@@ -1,0 +1,14 @@
+<div class="account-activation">
+    <div class="title">
+        Account activation
+    </div>
+    <div class="status">
+        <img  class="status-icon" src="../../../../assets/hourglass.svg" *ngIf="display == 'LOADING'"/>
+        <img  class="status-icon" src="../../../../assets/check.svg" *ngIf="display == 'SUCCESS' || display == 'CONFLICT'" />
+        <img  class="status-icon" src="../../../../assets/forbidden.svg" *ngIf="display == 'FORBIDDEN'"/>
+        <img  class="status-icon" src="../../../../assets/search.svg" *ngIf="display == 'NOT FOUND'"/>
+        <div class="status-text">
+            {{displayMessage}}
+        </div>
+    </div>
+</div>

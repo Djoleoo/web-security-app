@@ -1,0 +1,20 @@
+<div class="body">
+  <h1> Create an advertisement request</h1>
+  <form #advertisementForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-items">
+      <label for="deadline">Deadline:</label><br>
+      <input type="datetime-local" id="deadline" name="deadline" [(ngModel)]="advertisementRequest.deadline" required><br>
+    
+      <label for="activeFrom">Active From:</label><br>
+      <input type="datetime-local" id="activeFrom" name="activeFrom" [(ngModel)]="advertisementRequest.activeFrom" required><br>
+    
+      <label for="activeUntil">Active Until:</label><br>
+      <input type="datetime-local" id="activeUntil" name="activeUntil" [(ngModel)]="advertisementRequest.activeUntil" required><br>
+    
+      <label for="description">Description:</label><br>
+      <textarea id="description" name="description" rows="4" cols="50" [(ngModel)]="advertisementRequest.description"></textarea><br>
+    
+      <button type="submit" [disabled]="advertisementForm.invalid">Submit</button>
+    </div>
+  </form>
+</div>

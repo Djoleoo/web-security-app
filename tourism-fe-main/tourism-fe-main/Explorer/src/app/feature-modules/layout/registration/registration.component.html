@@ -1,0 +1,83 @@
+<div class="sign-up">
+    <div class="title">
+        Sign up
+    </div>
+    <div class="sign-up-form" *ngIf="!isSuccessfull">
+        <div class="label">I'm a(n):</div>
+        <div class="entity-type-blocks">
+            <div class="entity-type-block" [class.entity-type-block-selected]="request.isIndividual" (click)="changeEntityType(true)">
+                <img  class="entity-type-image" [src]="'../../../../assets/person' + (request.isIndividual ? '-white' : '') + '.svg'"/>
+                <div class="entity-type-text" [class.entity-type-text-selected]="request.isIndividual">Individual</div>
+            </div>
+            <div class="entity-type-block" [class.entity-type-block-selected]="!request.isIndividual" (click)="changeEntityType(false)">
+                <img  class="entity-type-image" [src]="'../../../../assets/company' + (!request.isIndividual ? '-white' : '') + '.svg'"/>
+                <div class="entity-type-text" [class.entity-type-text-selected]="!request.isIndividual">Legal entity</div>
+            </div>
+        </div>
+        <div class="label">Email:</div>
+        <input class="input" type="text" placeholder="Email" [(ngModel)]="request.email">
+        <div class="label">Password:</div>
+        <div class="password-input">
+            <input class="input" [type]="isPasswordHidden ? 'password' : 'text'" placeholder="Password" [(ngModel)]="request.password">
+            <img class="eye" [src]="'../../../../assets/eye' + (isPasswordHidden ? '' : '-slash') + '.svg'" (click)="toggleHidePassword()"/>
+        </div>
+        <div class="label">Repeat password:</div>
+        <div class="password-input">
+            <input class="input" [type]="isRepeatPasswordHidden ? 'password' : 'text'" placeholder="Repeat password" [(ngModel)]="request.repeatPassword">
+            <img class="eye" [src]="'../../../../assets/eye' + (isRepeatPasswordHidden ? '' : '-slash') + '.svg'"  (click)="toggleHideRepeatPassword()"/>
+        </div>
+        <div class="label" *ngIf="request.isIndividual">First name:</div>
+        <input class="input" type="text" placeholder="First name" [(ngModel)]="request.firstName" *ngIf="request.isIndividual">
+        <div class="label" *ngIf="request.isIndividual">Last name:</div>
+        <input class="input" type="text" placeholder="Last name" [(ngModel)]="request.lastName" *ngIf="request.isIndividual">
+        <div class="label" *ngIf="!request.isIndividual">Company name:</div>
+        <input class="input" type="text" placeholder="Company name" [(ngModel)]="request.companyName" *ngIf="!request.isIndividual">
+        <div class="label" *ngIf="!request.isIndividual">Tax identification number:</div>
+        <input class="input" type="text" placeholder="Tax identification number" [(ngModel)]="request.taxIdentificationNumber" *ngIf="!request.isIndividual">
+        <div class="label">Phone number:</div>
+        <input class="input" type="text" placeholder="Phone number" [(ngModel)]="request.phoneNumber">
+        <div class="label">Country:</div>
+        <input class="input" type="text" placeholder="Country" [(ngModel)]="request.country">
+        <div class="label">City:</div>
+        <input class="input" type="text" placeholder="City" [(ngModel)]="request.city">
+        <div class="label">Address:</div>
+        <input class="input" type="text" placeholder="Address" [(ngModel)]="request.address">
+        <div class="label">Package:</div>
+        <div class="package-blocks">
+            <div class="package-block" [class.package-block-selected]="request.clientPackage == 'BASE'" (click)="changePackage('BASE')">
+                <div class="stars">
+                    <img  class="star" [src]="'../../../../assets/star' + (request.clientPackage == 'BASE' ? '-white' : '') + '.svg'"/>
+                </div>
+                <div class="package-text" [class.package-text-selected]="request.clientPackage == 'BASE'">Base</div>
+            </div>
+            <div class="package-block" [class.package-block-selected]="request.clientPackage == 'STANDARD'" (click)="changePackage('STANDARD')">
+                <div class="stars">
+                    <img  class="star" [src]="'../../../../assets/star' + (request.clientPackage == 'STANDARD' ? '-white' : '') + '.svg'"/>
+                    <img  class="star" [src]="'../../../../assets/star' + (request.clientPackage == 'STANDARD' ? '-white' : '') + '.svg'"/>
+                </div>
+                <div class="package-text" [class.package-text-selected]="request.clientPackage == 'STANDARD'">Standard</div>
+            </div>
+            <div class="package-block" [class.package-block-selected]="request.clientPackage == 'GOLD'" (click)="changePackage('GOLD')">
+                <div class="stars">
+                    <img  class="star" [src]="'../../../../assets/star' + (request.clientPackage == 'GOLD' ? '-white' : '') + '.svg'"/>
+                    <img  class="star" [src]="'../../../../assets/star' + (request.clientPackage == 'GOLD' ? '-white' : '') + '.svg'"/>
+                    <img  class="star" [src]="'../../../../assets/star' + (request.clientPackage == 'GOLD' ? '-white' : '') + '.svg'"/>
+                </div>
+                <div class="package-text" [class.package-text-selected]="request.clientPackage == 'GOLD'">Gold</div>
+            </div>
+        </div>
+        <re-captcha class="re-captcha" (resolved)="resolveReCaptcha($event)" [siteKey]="reCaptchaSiteKey"></re-captcha>
+        <div class="sign-up-button" (click)="tryRequestRegistration()">
+            <div class="sign-up-button-text">Sign up</div>
+        </div>
+        <div class="question">Already have an account? <span class="link" (click)="navigate('/sign-in')">Sign in</span>.</div>
+        <div class="or">or</div>
+        <div class="google"><asl-google-signin-button type="standard" size="large" shape="pill" text="signup_with"></asl-google-signin-button></div>
+    </div>
+    <div class="success" *ngIf="isSuccessfull">
+        <img  class="check" src="../../../../assets/check.svg"/>
+        <div class="success-text">
+            Successfully requested account registration. Please wait for administrator's response.
+        </div>
+    </div>
+</div>

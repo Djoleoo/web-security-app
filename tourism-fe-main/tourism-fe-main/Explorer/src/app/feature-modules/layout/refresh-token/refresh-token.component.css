@@ -1,0 +1,38 @@
+.change-password {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: calc(100vh - 7rem);
+    align-items: center;
+    padding-block: 2rem;
+}
+
+.change-password-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 1);
+    cursor: pointer;
+    transition: filter 0.15s ease;
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.change-password-button:hover {
+    filter: brightness(1.05);
+}
+
+.change-password-button:active {
+    filter: brightness(1.075);
+}
+
+.change-password-button-text {
+    font-family: Roboto, Arial;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 500;
+}

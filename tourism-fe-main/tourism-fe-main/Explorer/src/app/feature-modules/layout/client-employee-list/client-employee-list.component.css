@@ -1,0 +1,57 @@
+.admin-update {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    width: 40rem;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 2rem;
+}
+
+.client-employee-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.client-employee-table th, .client-employee-table td {
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.client-employee-table th {
+    background-color: rgba(220, 74, 50, 1);
+    color: rgba(255, 255, 255, 1);
+    font-family: Roboto, Arial;
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.client-employee-table td {
+    font-family: Roboto, Arial;
+    font-size: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+button, button:focus {
+    font-size: 20px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #ff9800;
+    border: 2px solid #f57c00;
+    color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #f57c00;
+  }
+  
+  button:active {
+    transform: translateY(2px);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+  }

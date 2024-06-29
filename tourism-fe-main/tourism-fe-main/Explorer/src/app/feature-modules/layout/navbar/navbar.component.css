@@ -1,0 +1,161 @@
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 1);
+    width: 22%;
+    box-shadow: 5px 0 5px -2px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 3rem;
+    cursor: pointer;
+}
+
+.logo-image {
+    height: 3rem;
+}
+
+.logo-text-1 {
+    font-family: Roboto, Arial;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+.logo-text-2 {
+    font-family: Roboto, Arial;
+    font-size: 2rem;
+    color: rgba(220, 74, 50, 1);
+    font-weight: 500;
+    margin-left: -0.25rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+}
+
+.auth {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(220, 74, 50, 1);
+    cursor: pointer;
+    transition: filter 0.15s ease;
+    border-radius: 1.5rem;
+}
+
+.sign-in:hover {
+    filter: brightness(1.05);
+}
+
+.sign-in:active {
+    filter: brightness(1.075);
+}
+
+.sign-in-text {
+    font-family: Roboto, Arial;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 500;
+}
+
+.sign-up {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 1);
+    cursor: pointer;
+    transition: filter 0.15s ease;
+    border-radius: 1.5rem;
+}
+
+.sign-up:hover {
+    filter: brightness(1.05);
+}
+
+.sign-up:active {
+    filter: brightness(1.075);
+}
+
+.sign-up-text {
+    font-family: Roboto, Arial;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 500;
+}
+
+.content-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    margin-top: 1.5rem;
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item {
+    margin-top: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 0.5rem;
+}
+
+.item-text {
+    font-family: Roboto, Arial;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 500;
+    transition: color 0.15s;
+}
+
+.item:hover .item-text {
+    color: rgba(220, 74, 50, 1);
+}
+
+.separator {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.selected {
+    color: rgba(220, 74, 50, 1);
+}

@@ -1,0 +1,146 @@
+2024-06-12 18:26:32 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-12 18:26:32 [main] INFO  BSEP.KT2.Kt2Application - Starting Kt2Application using Java 17.0.1 with PID 19216 (D:\FAKULTET\8.semestar\Bezbednost\KT2\bsep-ra-2024-kt2-tim-20\KT2\KT2\target\classes started by Savic in D:\FAKULTET\8.semestar\Bezbednost\KT2\bsep-ra-2024-kt2-tim-20\KT2\KT2)
+2024-06-12 18:26:32 [main] INFO  BSEP.KT2.Kt2Application - No active profile set, falling back to 1 default profile: "default"
+2024-06-12 18:26:35 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-12 18:26:35 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 552 ms. Found 5 JPA repository interfaces.
+2024-06-12 18:26:38 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2024-06-12 18:26:38 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-12 18:26:38 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at BSEP.KT2.Kt2Application.main(Kt2Application.java:9)
+Caused by: java.lang.IllegalStateException: Unable to create key store: Could not load store from '${BSEP_KEYSTORE_PATH}'
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:94)
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.<init>(JksSslStoreBundle.java:57)
+	at org.springframework.boot.web.server.WebServerSslBundle.createJksKeyStoreBundle(WebServerSslBundle.java:90)
+	at org.springframework.boot.web.server.WebServerSslBundle.createKeyStore(WebServerSslBundle.java:189)
+	at org.springframework.boot.web.server.WebServerSslBundle.createStoreBundle(WebServerSslBundle.java:179)
+	at org.springframework.boot.web.server.WebServerSslBundle.get(WebServerSslBundle.java:174)
+	at org.springframework.boot.web.server.AbstractConfigurableWebServerFactory.getSslBundle(AbstractConfigurableWebServerFactory.java:225)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeSsl(TomcatServletWebServerFactory.java:373)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeConnector(TomcatServletWebServerFactory.java:349)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:210)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: java.lang.IllegalStateException: Could not load store from '${BSEP_KEYSTORE_PATH}'
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:123)
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:89)
+	... 19 common frames omitted
+Caused by: java.io.FileNotFoundException: D:\FAKULTET\8.semestar\Bezbednost\KT2\bsep-ra-2024-kt2-tim-20\KT2\KT2\${BSEP_KEYSTORE_PATH} (The system cannot find the file specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:86)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:189)
+	at java.base/java.net.URL.openStream(URL.java:1161)
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:118)
+	... 20 common frames omitted
+2024-06-12 18:39:06 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-12 18:39:06 [main] INFO  BSEP.KT2.Kt2Application - Starting Kt2Application using Java 17.0.1 with PID 12428 (D:\FAKULTET\8.semestar\Bezbednost\KT2\bsep-ra-2024-kt2-tim-20\KT2\KT2\target\classes started by Savic in D:\FAKULTET\8.semestar\Bezbednost\KT2\bsep-ra-2024-kt2-tim-20\KT2\KT2)
+2024-06-12 18:39:06 [main] INFO  BSEP.KT2.Kt2Application - No active profile set, falling back to 1 default profile: "default"
+2024-06-12 18:39:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-12 18:39:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 320 ms. Found 5 JPA repository interfaces.
+2024-06-12 18:39:11 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 443 (https)
+2024-06-12 18:39:11 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-443"]
+2024-06-12 18:39:11 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-12 18:39:11 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-12 18:39:11 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-12 18:39:11 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4888 ms
+2024-06-12 18:39:12 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-12 18:39:12 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-12 18:39:12 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-12 18:39:13 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-12 18:39:13 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-12 18:39:13 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@900649e
+2024-06-12 18:39:13 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-12 18:39:15 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-12 18:39:15 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-12 18:39:16 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-12 18:39:18 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@fa3db48, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19158d56, org.springframework.security.web.context.SecurityContextHolderFilter@75c2a35, org.springframework.security.web.header.HeaderWriterFilter@78e3bebd, org.springframework.web.filter.CorsFilter@3f02dc34, org.springframework.security.web.authentication.logout.LogoutFilter@b0e903a, BSEP.KT2.security.jwt.implementation.JwtAuthFilter@3e6b08d4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@27c2f134, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@64bed8b2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f49fa1d, org.springframework.security.web.session.SessionManagementFilter@6f6c4462, org.springframework.security.web.access.ExceptionTranslationFilter@8ff4795, org.springframework.security.web.access.intercept.AuthorizationFilter@72dc9f9d]
+2024-06-12 18:39:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-jsse-nio-443"]
+2024-06-12 18:39:19 [pool-2-thread-1] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 795 ms
+2024-06-12 18:39:19 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\Savic\.keystore] using alias [my_server_alias] with trust store [null]
+2024-06-12 18:39:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 443 (https) with context path ''
+2024-06-12 18:39:19 [main] INFO  BSEP.KT2.Kt2Application - Started Kt2Application in 13.59 seconds (process running for 14.335)
+2024-06-12 18:39:44 [https-jsse-nio-443-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-12 18:39:44 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-12 18:39:44 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-12 18:39:44 [https-jsse-nio-443-exec-5] INFO  BSEP.KT2.controller.LoginController - Attempting to login with username: admin@admin.admin
+2024-06-12 18:39:45 [https-jsse-nio-443-exec-5] INFO  BSEP.KT2.controller.LoginController - User admin@admin.admin successfully logged in.
+2024-06-12 18:42:04 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-12 18:42:04 [main] INFO  BSEP.KT2.Kt2Application - Starting Kt2Application using Java 17.0.1 with PID 18160 (D:\FAKULTET\8.semestar\Bezbednost\KT2\bsep-ra-2024-kt2-tim-20\KT2\KT2\target\classes started by Savic in D:\FAKULTET\8.semestar\Bezbednost\KT2\bsep-ra-2024-kt2-tim-20\KT2\KT2)
+2024-06-12 18:42:04 [main] INFO  BSEP.KT2.Kt2Application - No active profile set, falling back to 1 default profile: "default"
+2024-06-12 18:42:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-12 18:42:08 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 501 ms. Found 5 JPA repository interfaces.
+2024-06-12 18:42:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 443 (https)
+2024-06-12 18:42:09 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-443"]
+2024-06-12 18:42:09 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-12 18:42:09 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-12 18:42:10 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-12 18:42:10 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5140 ms
+2024-06-12 18:42:10 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-12 18:42:10 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-12 18:42:10 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-12 18:42:11 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-12 18:42:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-12 18:42:11 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5e7cd0df
+2024-06-12 18:42:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-12 18:42:13 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-12 18:42:13 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-12 18:42:14 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-12 18:42:17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@219c32e3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@fa3db48, org.springframework.security.web.context.SecurityContextHolderFilter@20ac726c, org.springframework.security.web.header.HeaderWriterFilter@19bdfa3e, org.springframework.web.filter.CorsFilter@19158d56, org.springframework.security.web.authentication.logout.LogoutFilter@184b3575, BSEP.KT2.security.jwt.implementation.JwtAuthFilter@3a5922ec, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a9e31e8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27c2f134, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f02dc34, org.springframework.security.web.session.SessionManagementFilter@6a49b3c7, org.springframework.security.web.access.ExceptionTranslationFilter@53bc8c7e, org.springframework.security.web.access.intercept.AuthorizationFilter@18f6ccf4]
+2024-06-12 18:42:17 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-jsse-nio-443"]
+2024-06-12 18:42:18 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\Savic\.keystore] using alias [my_server_alias] with trust store [null]
+2024-06-12 18:42:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 443 (https) with context path ''
+2024-06-12 18:42:18 [main] INFO  BSEP.KT2.Kt2Application - Started Kt2Application in 14.424 seconds (process running for 15.006)
+2024-06-12 18:42:18 [pool-2-thread-1] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 973 ms
+2024-06-12 18:42:33 [https-jsse-nio-443-exec-6] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-12 18:42:33 [https-jsse-nio-443-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-12 18:42:33 [https-jsse-nio-443-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-06-12 18:42:34 [https-jsse-nio-443-exec-6] INFO  BSEP.KT2.controller.LoginController - Attempting to login with username: admin@admin.admin
+2024-06-12 18:42:34 [https-jsse-nio-443-exec-6] INFO  BSEP.KT2.controller.LoginController - User admin@admin.admin successfully logged in.
+2024-06-12 18:43:39 [https-jsse-nio-443-exec-2] INFO  BSEP.KT2.controller.LoginController - Attempting to login with username: admin@admin.admin
+2024-06-12 18:43:40 [https-jsse-nio-443-exec-2] INFO  BSEP.KT2.controller.LoginController - User admin@admin.admin successfully logged in.
+2024-06-12 18:51:50 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-12 18:51:50 [main] INFO  BSEP.KT2.Kt2Application - Starting Kt2Application using Java 17.0.1 with PID 13560 (D:\FAKULTET\8.semestar\Bezbednost\KT2\bsep-ra-2024-kt2-tim-20\KT2\KT2\target\classes started by Savic in D:\FAKULTET\8.semestar\Bezbednost\KT2\bsep-ra-2024-kt2-tim-20\KT2\KT2)
+2024-06-12 18:51:50 [main] INFO  BSEP.KT2.Kt2Application - No active profile set, falling back to 1 default profile: "default"
+2024-06-12 18:51:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-12 18:51:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 317 ms. Found 5 JPA repository interfaces.
+2024-06-12 18:51:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 443 (https)
+2024-06-12 18:51:55 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-443"]
+2024-06-12 18:51:55 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-12 18:51:55 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-12 18:51:55 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-12 18:51:55 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4604 ms
+2024-06-12 18:51:55 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-12 18:51:55 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-12 18:51:56 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-12 18:51:56 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-12 18:51:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-12 18:51:57 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1fc3df43
+2024-06-12 18:51:57 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-12 18:51:59 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-12 18:51:59 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-12 18:51:59 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-12 18:52:02 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@219c32e3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@fa3db48, org.springframework.security.web.context.SecurityContextHolderFilter@20ac726c, org.springframework.security.web.header.HeaderWriterFilter@19bdfa3e, org.springframework.web.filter.CorsFilter@19158d56, org.springframework.security.web.authentication.logout.LogoutFilter@184b3575, BSEP.KT2.security.jwt.implementation.JwtAuthFilter@4377b35b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a9e31e8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27c2f134, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f02dc34, org.springframework.security.web.session.SessionManagementFilter@6a49b3c7, org.springframework.security.web.access.ExceptionTranslationFilter@53bc8c7e, org.springframework.security.web.access.intercept.AuthorizationFilter@18f6ccf4]
+2024-06-12 18:52:02 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-jsse-nio-443"]
+2024-06-12 18:52:03 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\Savic\.keystore] using alias [my_server_alias] with trust store [null]
+2024-06-12 18:52:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 443 (https) with context path ''
+2024-06-12 18:52:03 [main] INFO  BSEP.KT2.Kt2Application - Started Kt2Application in 13.869 seconds (process running for 14.652)
+2024-06-12 18:52:03 [pool-2-thread-1] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 885 ms
+2024-06-12 18:52:21 [https-jsse-nio-443-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-12 18:52:21 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-12 18:52:21 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-12 18:52:21 [https-jsse-nio-443-exec-5] INFO  BSEP.KT2.controller.LoginController - Login attempt for user: admin@admin.admin from IP: 0:0:0:0:0:0:0:1
+2024-06-12 18:52:22 [https-jsse-nio-443-exec-5] INFO  BSEP.KT2.controller.LoginController - Successful login for user: admin@admin.admin from IP: 0:0:0:0:0:0:0:1

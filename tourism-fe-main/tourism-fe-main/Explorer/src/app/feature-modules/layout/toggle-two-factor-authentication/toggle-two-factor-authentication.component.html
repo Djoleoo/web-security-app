@@ -1,0 +1,19 @@
+<div class="toggle">
+    <div class="title">
+        <div class="title-text">
+            Two factor authentication
+        </div>
+        <img  class="x" src="../../../../assets/x.svg" (click)="close()"/>
+    </div>
+    <div class="text" *ngIf="!isSetupSuccessfull">Two factor authentication is {{isEnabled ? "enabled" : "disabled"}}. Do you want to {{!isEnabled ? "enable" : "disable"}} it?</div>
+    <div class="text" *ngIf="isSetupSuccessfull">Successfully initialized two factor authentication setup. Scan the QR code in your Google Authenticator app and complete the setup by typing the code from the app below.</div>
+    <qrcode class="qr" [qrdata]="qrCode" [width]="256" [errorCorrectionLevel]="'M'" *ngIf="isSetupSuccessfull"></qrcode>
+    <div class="label" *ngIf="isSetupSuccessfull">Code:</div>
+    <input class="input" type="number" placeholder="Code" *ngIf="isSetupSuccessfull" [(ngModel)]="code.code"/>
+    <div class="toggle-button" [class.toggle-button-disabled]="isEnabled" (click)="toggle()" *ngIf="!isSetupSuccessfull">
+        <div class="toggle-button-text">{{!isEnabled ? "Enable" : "Disable"}}</div>
+    </div>
+    <div class="toggle-button" (click)="enable()" *ngIf="isSetupSuccessfull">
+        <div class="toggle-button-text">Enable</div>
+    </div>
+</div>

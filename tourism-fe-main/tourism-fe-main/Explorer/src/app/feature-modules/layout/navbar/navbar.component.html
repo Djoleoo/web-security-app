@@ -1,0 +1,104 @@
+<nav class="nav">
+    <div class="logo" [routerLink]="['']">
+        <img  class="logo-image" src="../../../../assets/logo.svg"/>
+        <div class="logo-text-1">Marke</div>
+        <div class="logo-text-2">Team</div>
+    </div>
+    <div class="content" *ngIf="!isUserAuthenticated()">
+        <div class="auth">
+            <div class="sign-in" [routerLink]="['sign-in']">
+                <div class="sign-in-text">Sign in</div>
+            </div>
+            <div class="sign-up" [routerLink]="['sign-up']">
+                <div class="sign-up-text">Sign up</div>
+            </div>
+        </div>
+    </div>
+    <div class="content-menu" *ngIf="isUserAuthenticated()">
+        <div class="menu">
+            
+            <!-- UNIVERSAL MENU -->
+            <div class="item" [routerLink]="['']">
+                <div class="item-text" [class.selected]="getCurrentURL() == '/' || getCurrentURL() == '/home'">
+                    Home
+                </div>
+                <div class="separator"></div>
+            </div>
+            <div class="item" [routerLink]="['refresh-token']" >
+                <div class="item-text"  [class.selected]="getCurrentURL() == '/refresh-token'">
+                    Refresh token
+                </div>
+                <div class="separator"></div>
+            </div>
+            <div class="item" (click)="openToggleTwoFactorAuthenticationDialog()">
+                <div class="item-text">
+                    Two factor authentication
+                </div>
+                <div class="separator"></div>
+            </div>
+
+            <!-- ADMINISTRATOR MENU -->
+            <div class="item" [routerLink]="['client-registration-requests']" *ngIf="getRole() == 'ADMIN'">
+                <div class="item-text"  [class.selected]="getCurrentURL() == '/client-registration-requests'">
+                    Client registration requests
+                </div>
+                <div class="separator"></div>
+            </div>
+            <div class="item" [routerLink]="['user-creation']" *ngIf="getRole() == 'ADMIN'">
+                <div class="item-text"  [class.selected]="getCurrentURL() == '/user-creation'">
+                    Create an user
+                </div>
+                <div class="separator"></div>
+            </div>
+            <div class="item" [routerLink]="['admin-update']" *ngIf="getRole() == 'ADMIN'">
+                <div class="item-text"  [class.selected]="getCurrentURL() == '/admin-update'">
+                    Profile
+                </div>
+                <div class="separator"></div>
+            </div>
+            <div class="item" [routerLink]="['client-employee-list']" *ngIf="getRole() == 'ADMIN'">
+                <div class="item-text"  [class.selected]="getCurrentURL() == '/client-employee-list'">
+                    List of users
+                </div>
+            </div>
+
+            <!-- CLIENT MENU -->
+            <div class="item" [routerLink]="['advertisement-request']" *ngIf="getRole() == 'CLIENT'">
+                <div class="item-text"  [class.selected]="getCurrentURL() == '/advertisement-request'">
+                    Create advertisement request
+                </div>
+                <div class="separator"></div>
+            </div>
+            <div class="item" [routerLink]="['client-profile']" *ngIf="getRole() == 'CLIENT'">
+                <div class="item-text"  [class.selected]="getCurrentURL() == '/client-profile' || getCurrentURL() == '/client-update'">
+                    Profile
+                </div>
+                <div class="separator"></div>
+            </div>
+            <div class="item" [routerLink]="['my-advertisements']" *ngIf="getRole() == 'CLIENT'">
+                <div class="item-text"  [class.selected]="getCurrentURL() == '/my-advertisements'">
+                    My advertisements
+                </div>
+            </div>
+
+            <!-- EMPLOYEE MENU -->
+            <div class="item" [routerLink]="['advertisement-request-list']" *ngIf="getRole() == 'EMPLOYEE'">
+                <div class="item-text"  [class.selected]="getCurrentURL() == '/advertisement-request-list'">
+                    Advertisement requests
+                </div>
+                <div class="separator"></div>
+            </div>
+            <div class="item" [routerLink]="['advertisements']" *ngIf="getRole() == 'EMPLOYEE'">
+                <div class="item-text"  [class.selected]="getCurrentURL() == '/advertisements'">
+                    Advertisements
+                </div>
+                <div class="separator"></div>
+            </div>
+            <div class="item" [routerLink]="['employee-update']" *ngIf="getRole() == 'EMPLOYEE'">
+                <div class="item-text"  [class.selected]="getCurrentURL() == '/employee-update'">
+                    Profile 
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

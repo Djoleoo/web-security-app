@@ -1,0 +1,54 @@
+<div class="profile">
+    <div class="title">
+        Profile
+    </div>
+    <div class="content">
+        <div class="left">
+            <div class="left-1">
+                <img  class="entity-type-image" [src]="'../../../../assets/person-white.svg'" *ngIf="type == 'INDIVIDUAL'"/>
+                <img  class="entity-type-image" [src]="'../../../../assets/company-white.svg'" *ngIf="type == 'LEGAL'"/>
+                <div class="entity-type-text" *ngIf="type == 'INDIVIDUAL'">Individual</div>
+                <div class="entity-type-text" *ngIf="type == 'LEGAL'">Legal entity</div>
+            </div>
+            <div class="left-2">
+                <div class="stars">
+                    <img  class="star" [src]="'../../../../assets/star-white.svg'"/>
+                    <img  class="star" [src]="'../../../../assets/star-white.svg'"  *ngIf="clientPackage == 'STANDARD' || clientPackage == 'GOLD'"/>
+                    <img  class="star" [src]="'../../../../assets/star-white.svg'" *ngIf="clientPackage == 'GOLD'"/>
+                </div>
+                <div class="package-text" *ngIf="clientPackage == 'BASE'">Base</div>
+                <div class="package-text" *ngIf="clientPackage == 'STANDARD'">Standard</div>
+                <div class="package-text" *ngIf="clientPackage == 'GOLD'">Gold</div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="info">
+                <div class="label">Email:</div>
+                <input class="input" type="text" placeholder="Email" [(ngModel)]="username" readonly>
+                <div class="label" *ngIf="type == 'INDIVIDUAL'">First name:</div>
+                <input class="input" type="text" placeholder="First name" [(ngModel)]="firstName" readonly *ngIf="type == 'INDIVIDUAL'">
+                <div class="label" *ngIf="type == 'INDIVIDUAL'">Last name:</div>
+                <input class="input" type="text" placeholder="Last name" [(ngModel)]="lastName" readonly *ngIf="type == 'INDIVIDUAL'">
+                <div class="label"  *ngIf="type == 'LEGAL'">Company name:</div>
+                <input class="input" type="text" placeholder="Company name" [(ngModel)]="companyName" readonly *ngIf="type == 'LEGAL'">
+                <div class="label"  *ngIf="type == 'LEGAL'">Tax identification number:</div>
+                <input class="input" type="text" placeholder="Tax identification number" [(ngModel)]="taxIdentificationNumber" readonly *ngIf="type == 'LEGAL'">
+                <div class="label">Phone number:</div>
+                <input class="input" type="text" placeholder="Phone number" [(ngModel)]="phoneNumber" readonly>
+                <div class="label">Country:</div>
+                <input class="input" type="text" placeholder="Country" [(ngModel)]="country" readonly>
+                <div class="label">City:</div>
+                <input class="input" type="text" placeholder="City" [(ngModel)]="city" readonly>
+                <div class="label">Address:</div>
+                <input class="input" type="text" placeholder="Address" [(ngModel)]="address" readonly>
+                <div class="button" [routerLink]="['/client-update']">
+                    <div class="button-text">Update</div>
+                </div>
+                <div class="margin" *ngIf="clientPackage == 'GOLD'"></div>
+                <div class="button-black" (click)="openAccountDeletionDialog()" *ngIf="clientPackage == 'GOLD'">
+                    <div class="button-text">Delete account</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,104 @@
+:host {
+    border-radius: 2rem;
+}
+
+
+.title {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.title-text {
+    font-family: Roboto, Arial;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 500;
+}
+
+.x {
+    position: absolute;
+    right: 0;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
+.text {
+    font-family: Roboto, Arial;
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 400;
+    transition: color 0.15s;
+    margin-bottom: 2rem;
+}
+
+.update-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(220, 74, 50, 1);
+    cursor: pointer;
+    transition: filter 0.15s ease;
+    border-radius: 1.5rem;
+}
+
+.update-button:hover {
+    filter: brightness(1.05);
+}
+
+.update-button:active {
+    filter: brightness(1.075);
+}
+
+.update-button-text {
+    font-family: Roboto, Arial;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 500;
+}
+
+.admin-update {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    width: 40rem;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 2rem;
+}
+
+.client-employee-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.client-employee-table th, .client-employee-table td {
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.client-employee-table th {
+    background-color: rgba(220, 74, 50, 1);
+    color: rgba(255, 255, 255, 1);
+    font-family: Roboto, Arial;
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.client-employee-table td {
+    font-family: Roboto, Arial;
+    font-size: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+

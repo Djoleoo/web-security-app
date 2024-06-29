@@ -1,0 +1,13 @@
+<div class="body">
+    <h1> My advertisements</h1>
+    <div *ngFor="let ad of advertisements" class="advertisement">
+      <p class="header">Created for user {{ ad.username }}</p>
+      <div class="dates">
+        <p>Active From: {{ ad.activeFrom | slice:0:10 }}</p>
+        <p>Until: {{ ad.activeUntil | slice:0:10 }}</p>
+      </div>
+      <p>Description: {{ ad.description }}</p>
+      <p>Slogan: {{ ad.slogan }}</p>
+      <p><b>Status: {{ getStatus(ad.activeUntil) }}</b></p>
+    </div>
+  </div>

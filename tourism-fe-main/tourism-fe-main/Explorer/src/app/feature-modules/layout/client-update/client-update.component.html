@@ -1,0 +1,20 @@
+<div class="admin-update">
+    <div class="title">
+        <h2 class="title-text">Client Update</h2>
+        <!-- You can include an "X" button here if needed -->
+    </div>
+    <!-- Input fields for admin update information -->
+    <input type="text" placeholder="Username" class="text" [(ngModel)]="newusername">
+    <input type="text" placeholder="First Name" class="text" [(ngModel)]="firstName">
+    <input type="text" placeholder="Last Name" class="text" [(ngModel)]="lastName">
+    <input type="text" placeholder="Address" class="text" [(ngModel)]="address">
+    <input type="text" placeholder="City" class="text" [(ngModel)]="city">
+    <input type="text" placeholder="Country" class="text" [(ngModel)]="country">
+    <input type="text" placeholder="Phone Number" class="text" [(ngModel)]="phoneNumber">
+    
+    <!-- Update button -->
+    <button class="update-button" (click)="updateUser(newusername,firstName, lastName, address, city, country, phoneNumber)">
+        <span class="update-button-text">Update</span>
+    </button>
+</div>
+

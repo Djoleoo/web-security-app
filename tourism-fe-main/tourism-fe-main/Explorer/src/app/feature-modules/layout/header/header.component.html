@@ -1,0 +1,17 @@
+<div class="header">
+    <div class="auth">
+        <div class="sign-in" [routerLink]="['sign-in']" *ngIf="!getUsername()">
+            <div class="sign-in-text">Sign in</div>
+        </div>
+        <div class="sign-up" [routerLink]="['sign-up']" *ngIf="!getUsername()">
+            <div class="sign-up-text">Sign up</div>
+        </div>
+        <div class="user" *ngIf="getUsername()">
+            <img  class="user-image" src="../../../../assets/person-white.svg"/>
+            <div class="user-text">{{getUsername()}}</div>
+            <div class="sign-out" (click)="logout()">
+                <img  class="sign-out-image" src="../../../../assets/sign-out.svg"/>
+            </div>
+        </div>
+    </div>
+</div>

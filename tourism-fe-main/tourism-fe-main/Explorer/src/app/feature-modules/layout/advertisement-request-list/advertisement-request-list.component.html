@@ -1,0 +1,27 @@
+<div class="body">
+  <h1> Advertisement requests</h1>
+  <div *ngFor="let request of unprocessedRequests">
+    <div class="advertisement-request">
+      <div class="advertisement-info">
+        <div class="info-text">
+          <p class="deadline-text"><b>Deadline: {{ request.deadline | slice:0:10 }}</b></p>
+          <div class="dates">
+            <p>Active From: {{ request.activeFrom | slice:0:10 }}</p>
+            <p> Until: {{ request.activeUntil | slice:0:10 }}</p>
+          </div>
+          <p class="desc">Description: {{ request.description }}</p>
+      </div>
+        <div class="info-button">
+          <button class="button" (click)="showForm(request)">Open Form</button>
+        </div>
+      </div>
+      <div *ngIf="selectedRequest === request" >
+        <form (submit)="submitForm()" class="slogan-part">
+          <label for="slogan">Slogan:</label>
+          <input type="text" id="slogan" name="slogan" [(ngModel)]="slogan" required>
+          <button (click)="submitForm()" class="button-ad">Create ad</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+h1{
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+
+
+.advertisement{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 800px;
+    width: 700px;
+    border: 2px solid;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #E5E4E2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adjust values for shadow depth and color */
+
+}
+
+.advertisement:hover{
+    background-color: whitesmoke;
+    transition: 0.5s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+}
+
+.dates{
+    display: flex;
+    gap: 40px;
+}
+
+.header{
+    font-size: 19px;
+    margin-bottom: 13px;
+}
+
+p, label{
+    font-family: Roboto, Arial;
+    font-size: 1rem;
+
+}

@@ -1,0 +1,14 @@
+<div class="rejection">
+    <div class="title">
+        <div class="title-text">
+            Registration request rejection
+        </div>
+        <img  class="x" src="../../../../assets/x.svg" (click)="close()"/>
+    </div>
+    <div class="text">Are you sure you want to reject this registration request?</div>
+    <div class="label">Reason:</div>
+    <textarea class="input" placeholder="Reason" [(ngModel)]="result.reason"></textarea>
+    <div class="reject-button" (click)="reject()">
+        <div class="reject-button-text">Reject</div>
+    </div>
+</div>

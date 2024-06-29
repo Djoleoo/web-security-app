@@ -1,0 +1,85 @@
+<div class="client-registration-requests">
+    <div class="title">
+        Client registration requests
+    </div>
+    <div class="filter-options">
+        <div class="option" [class.option-selected]="filter == 'ALL'" (click)="changeFilter('ALL')">
+            <div class="option-text" [class.option-text-selected]="filter == 'ALL'">
+                All
+            </div>
+        </div>
+        <div class="option" [class.option-selected]="filter == 'PENDING'" (click)="changeFilter('PENDING')">
+            <div class="option-text" [class.option-text-selected]="filter == 'PENDING'">
+                Pending
+            </div>
+        </div>
+        <div class="option" [class.option-selected]="filter == 'ACCEPTED'" (click)="changeFilter('ACCEPTED')">
+            <div class="option-text" [class.option-text-selected]="filter == 'ACCEPTED'">
+                Accepted
+            </div>
+        </div>
+        <div class="option" [class.option-selected]="filter == 'REJECTED'" (click)="changeFilter('REJECTED')">
+            <div class="option-text" [class.option-text-selected]="filter == 'REJECTED'">
+                Rejected
+            </div>
+        </div>
+    </div>
+    <div class="requests" *ngIf="isRequestsEmpty()">
+        <div class="no-items-found">
+            No requests found.
+        </div>
+    </div>
+    <div class="requests" *ngIf="!isRequestsEmpty()">
+        <div class="request" *ngFor="let request of requests" >
+            <div class="entity-type-block">
+                <img  class="entity-type-image" [src]="'../../../../assets/' + (request.isIndividual ? 'person' : 'company') + '-white.svg'"/>
+                <div class="entity-type-text">{{request.isIndividual ? 'Individual' : 'Legal entity'}}</div>
+            </div>
+            <div class="package-block">
+                <div class="stars">
+                    <img  class="star" src="../../../../assets/star-white.svg"/>
+                    <img  class="star" src="../../../../assets/star-white.svg" *ngIf="request.clientPackage != 'BASE'"/>
+                    <img  class="star" src="../../../../assets/star-white.svg" *ngIf="request.clientPackage == 'GOLD'"/>
+                </div>
+                <div class="package-text">{{getEnumName(request.clientPackage)}}</div>
+            </div>
+            <div class="info">
+                <div class="date">
+                    {{formatDateTime(request.dateTime)}}
+                </div>
+                <div class="infor-line">
+                    Email: {{request.email}}
+                </div>
+                <div class="infor-line" *ngIf="request.isIndividual">
+                    Full name: {{request.firstName}} {{request.lastName}}
+                </div>
+                <div class="infor-line" *ngIf="!request.isIndividual">
+                    Company name (Tax IDN): {{request.companyName}} ({{request.taxIdentificationNumber}})
+                </div>
+                <div class="infor-line">
+                    Address: {{request.address}}, {{request.city}}, {{request.country}}
+                </div>
+                <div class="buttons" *ngIf="request.status == 'PENDING'">
+                    <div class="reject" (click)="openRejectDialog(request.id)">
+                        <div class="reject-text">
+                            Reject
+                        </div>
+                    </div>
+                    <div class="accept" (click)="openAcceptDialog(request.id)">
+                        <div class="accept-text">
+                            Accept
+                        </div>
+                    </div>
+                </div>
+                <div class="status" *ngIf="request.status != 'PENDING'">
+                    <div class="status-text">
+                        {{getEnumName(request.status)}}
+                    </div>
+                    <img  class="status-icon" src="../../../../assets/check.svg" *ngIf="request.status == 'ACCEPTED'"/>
+                    <img  class="status-icon" src="../../../../assets/x.svg" *ngIf="request.status == 'REJECTED'"/>
+                </div>
+                <div class="reason" *ngIf="request.status == 'REJECTED'">(Reason: {{request.rejectionReason}})</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="deletion">
+    <div class="title">
+        <div class="title-text">
+            Account deletion
+        </div>
+        <img  class="x" src="../../../../assets/x.svg" (click)="close()"/>
+    </div>
+    <div class="text">Are you sure you want to delete your account? To confirm, please type <span class="highlight">DELETE</span> in the field below.</div>
+    <div class="label">Confirmation:</div>
+    <input class="input" type="text" placeholder="DELETE" [(ngModel)]="confirmation" />
+    <div class="button" (click)="delete()" *ngIf="confirmation == 'DELETE'">
+        <div class="button-text">Confirm account deletion</div>
+    </div>
+</div>
